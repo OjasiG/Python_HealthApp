@@ -1,0 +1,59 @@
+import sys
+import os
+import tkinter
+from tkinter import *
+import tkinter as tk
+from PIL import ImageTk, Image 
+
+top=Tk()
+
+def BMI():
+    os.system('python BMIFinal.py')
+    
+    
+def Water():
+    os.system('python WaterFinal.py')
+
+def Period():    
+    os.system('python PeriodFinal.py')
+    
+def running():
+    os.system('python TimerFinal.py')
+
+def workoutD(): 
+    os.system('python WorkoutDumbellFinal.py')
+    
+def workoutN():
+    os.system('python WorkoutNFinal.py')
+
+def sleep():
+    os.system('python SleepFinal.py')
+    
+    
+top.geometry("840x640")
+top.title("Superfit Me ")
+top.configure(background="dark green")
+image1 = Image.open(r"C:\Users\hp\OneDrive\Desktop\PSDL mini-project\Healthy-Food.jpg")
+resize_image = image1.resize((75,75))
+test = ImageTk.PhotoImage(image1,resize_image) 
+L=tk.Label(top,text='Welcome to Superfit me!!\n Start your fitness journey here, with us!!',font=("Arial Italic",18),bg='dark green',fg='white')
+L.pack()
+label1 = tk.Label(image=test)
+label1.image = test
+label1.pack(fill='both',expand=1)
+button = Button(top ,text = 'BMI calculation',relief = RAISED,font = ('Arial Italic', 18),bg='dark green',fg='white',command=BMI)
+button.place(x = 50, y = 250)
+button1 = Button(top,text = 'Water tracking',relief = RAISED,font = ('Arial Italic', 18),bg='dark green',fg='white',command=Water)
+button1.place(x = 30, y = 350)
+button2 = Button(top,text = 'Period tracking',relief = RAISED,font = ('Arial Italic', 18),bg='dark green',fg='white',command=Period)
+button2.place(x = 600, y = 250)
+button3 = Button(top, text = 'Running timer',relief = RAISED,font = ('Arial Italic', 18),bg='dark green',fg='white',command=running)
+button3.place(x = 320, y = 250)
+button4= Button(top,text = 'Dumbell Workouts',relief = RAISED,font = ('Arial Italic', 18),bg='dark green',fg='white',command=workoutD)
+button4.place(x = 600, y = 350)
+button5= Button( top,text = 'Sleep Recommendations',relief = RAISED, font = ('Arial Italic', 18),bg='dark green',fg='white',command=sleep)
+button5.place(x = 270, y = 450)
+button4= Button(top,text = 'Non Dumbell Workout',relief = RAISED,font = ('Arial Italic', 18),bg='dark green',fg='white',command=workoutN)
+button4.place(x = 290, y = 350)
+
+top.mainloop()
